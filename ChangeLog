@@ -1,3 +1,6 @@
+11-16-2013 - Frank Golf
+	* added explicit initialization for all data members 
+
 05-14-2013 - Frank Golf
 	* add branches for away jet cut of 65 GeV used by ETH
 
