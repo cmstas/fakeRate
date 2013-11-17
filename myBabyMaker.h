@@ -681,7 +681,7 @@ private:
     TPMERegexp relIso1p0Mu5_regexp;
 
     // electron ID MVA
-    class ElectronIDMVA* electronIdMVA;
+    // class ElectronIDMVA* electronIdMVA; what is this evey used for?
 };
 
 #endif // myBabyMaker_h
