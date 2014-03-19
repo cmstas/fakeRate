@@ -626,6 +626,7 @@ void myBabyMaker::InitBabyNtuple()
     pfiso03_bv_         = -999.;
     ch_pfiso03_bv_      = -999.;
     nh_pfiso03_bv_      = -999.;
+    em_pfiso03_bv_      = -999.;
     pfiso04_            = -999.;
     ch_pfiso04_         = -999.;
     nh_pfiso04_         = -999.;
@@ -1733,6 +1734,7 @@ myBabyMaker::myBabyMaker ()
     , pfiso03_bv_                                                        ( -999.  )
     , ch_pfiso03_bv_                                                     ( -999.  )
     , nh_pfiso03_bv_                                                     ( -999.  )
+    , em_pfiso03_bv_                                                     ( -999.  )
     , pfiso04_                                                           ( -999.  )
     , ch_pfiso04_                                                        ( -999.  )
     , nh_pfiso04_                                                        ( -999.  )
