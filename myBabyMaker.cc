@@ -666,6 +666,7 @@ void myBabyMaker::InitBabyNtuple()
     convHitPattern_   = false;
     convPartnerTrack_ = false;
     convMIT_          = false;
+    conv0MissHits_    = false;
 
     el_effarea03_          = -999.;
     el_effarea04_          = -999.;
