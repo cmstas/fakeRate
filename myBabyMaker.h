@@ -67,6 +67,7 @@ private:
     Int_t nmus_;
     Int_t nvetoels_;
     Int_t nvetomus_;
+    Int_t nloosemus_;
 
     /////////////////////////// 
     // End Event Information //
@@ -221,6 +222,15 @@ private:
     Float_t mc3dr_;
     LorentzVector mc3p4_;
     Int_t leptonIsFromW_;
+
+    // Lepton ID variables
+    Float_t mu_nchi2global_;
+    Bool_t mu_isGlobal_;
+    Bool_t mu_isPF_;
+    Int_t mu_numberOfValidMuonHits_;
+    Int_t mu_numberOfMatchedStations_;
+    Int_t mu_trackerLayersWithMeasurement_;
+    Int_t mu_numberOfValidPixelHits_;
 
     //////////////////////////
     // End Lepton Variables //
@@ -576,10 +586,11 @@ private:
     Float_t dphij1_b2b_;    // dphi between lepton and jet for jets away from lepton by dR >= 1.0
     Int_t   nj1_;           // number of jets above 10 GeV and away from lepton by dR >= 1.0
 #endif
-    Float_t ptpfj1_;        // highest pt pfjet well separated from the lepton
+    Float_t ptpfj1_;        // highest pt pfjet well separated from the lepton (|eta| < 2.5)
     Float_t ptpfj1_b2b_;    // highest pt pfjet away frmo lepton by dR >= 1.0 and dPhi > 2.5
     Float_t dphipfj1_b2b_;  // dphi between lepton and pfjet for pfjets away from lepton by dR >= 1.0
     Int_t   npfj1_;         // number of pfjets above 10 GeV and away from lepton by dR >= 1.0
+    Float_t csvpfj1_;       // CSV b-tag value of highest pt pfjet well separated from the lepton 
 
     // Same for PF Corrected jets L2L3
     Float_t ptpfcj1_;       // highest pt jet well separated from the lepton
