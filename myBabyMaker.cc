@@ -581,6 +581,7 @@ void myBabyMaker::InitBabyNtuple()
     nvetomus_ = 0;
     nvetoels_ = 0;
     nloosemus_ = 0;
+    nlooseels_ = 0;
 
     /////////////////////////// 
     // End Event Information //
@@ -662,6 +663,7 @@ void myBabyMaker::InitBabyNtuple()
     el_id_sieie_      = -999.;
     el_id_detain_     = -999.;
     el_id_dphiin_     = -999.;
+    el_id_ooemoop_     = -999.;
     el_id_smurfV5_    = false;
     el_id_vbtf80_     = false;
     el_id_vbtf90_     = false;
@@ -1086,6 +1088,7 @@ void myBabyMaker::InitBabyNtuple()
     emfpfcL1Fj1_       = -999.;
     ptpfcL1Fj1_        = 0.;
     dphipfcL1Fj1_      = -999.;
+    csvpfcL1Fj1_      = -999.;
     ptpfcL1Fj1_b2b_    = -999.;
     dphipfcL1Fj1_b2b_  = -999.;
     npfcL1Fj1_         = 0;
@@ -1100,6 +1103,7 @@ void myBabyMaker::InitBabyNtuple()
     emfpfcL1Fj1res_       = -999.;
     ptpfcL1Fj1res_        = 0.;
     dphipfcL1Fj1res_      = -999.;
+    csvpfcL1Fj1res_      = -999.;
     ptpfcL1Fj1res_b2b_    = -999.;
     dphipfcL1Fj1res_b2b_  = -999.;
     npfcL1Fj1res_         = 0;
@@ -1168,6 +1172,7 @@ void myBabyMaker::MakeBabyNtuple(const char *babyFilename)
     babyTree_->Branch("nvetoels"       , &nvetoels_       );
     babyTree_->Branch("nvetomus"       , &nvetomus_       );
     babyTree_->Branch("nloosemus"       , &nloosemus_       );
+    babyTree_->Branch("nlooseels"       , &nlooseels_       );
 
     /////////////////////////// 
     // End Event Information //
@@ -1250,6 +1255,7 @@ void myBabyMaker::MakeBabyNtuple(const char *babyFilename)
     babyTree_->Branch("el_id_sieie"           , &el_id_sieie_           );
     babyTree_->Branch("el_id_detain"          , &el_id_detain_          );
     babyTree_->Branch("el_id_dphiin"          , &el_id_dphiin_          );
+    babyTree_->Branch("el_id_ooemoop"         , &el_id_ooemoop_         );
     babyTree_->Branch("el_id_smurfV5"         , &el_id_smurfV5_         ); 
     babyTree_->Branch("el_id_vbtf80"          , &el_id_vbtf80_          ); 
     babyTree_->Branch("el_id_vbtf90"          , &el_id_vbtf90_          ); 
@@ -1634,6 +1640,7 @@ void myBabyMaker::MakeBabyNtuple(const char *babyFilename)
     babyTree_->Branch("emfpfcL1Fj1"     , &emfpfcL1Fj1_      );
     babyTree_->Branch("ptpfcL1Fj1"      , &ptpfcL1Fj1_       );       
     babyTree_->Branch("dphipfcL1Fj1"    , &dphipfcL1Fj1_     );       
+    babyTree_->Branch("csvpfcL1Fj1"     , &csvpfcL1Fj1_      );       
     babyTree_->Branch("npfcL1Fj1"       , &npfcL1Fj1_        );
     babyTree_->Branch("npfc30L1Fj1"     , &npfc30L1Fj1_      );
     babyTree_->Branch("npfc40L1Fj1"     , &npfc40L1Fj1_      );
@@ -1648,6 +1655,7 @@ void myBabyMaker::MakeBabyNtuple(const char *babyFilename)
     babyTree_->Branch("emfpfcL1Fj1res"     , &emfpfcL1Fj1res_      );
     babyTree_->Branch("ptpfcL1Fj1res"      , &ptpfcL1Fj1res_       );       
     babyTree_->Branch("dphipfcL1Fj1res"    , &dphipfcL1Fj1res_     );       
+    babyTree_->Branch("csvpfcL1Fj1res"     , &csvpfcL1Fj1res_      );       
     babyTree_->Branch("npfcL1Fj1res"       , &npfcL1Fj1res_        );
     babyTree_->Branch("npfc30L1Fj1res"     , &npfc30L1Fj1res_      );
     babyTree_->Branch("npfc40L1Fj1res"     , &npfc40L1Fj1res_      );
@@ -1722,6 +1730,7 @@ myBabyMaker::myBabyMaker ()
     , nvetoels_                                                          ( 0      )
     , nvetomus_                                                          ( 0      )
     , nloosemus_                                                         ( 0      )
+    , nlooseels_                                                         ( 0      )
     , pt_                                                                ( -999.  )
     , eta_                                                               ( -999.  )
     , sceta_                                                             ( -999.  )
@@ -1792,6 +1801,7 @@ myBabyMaker::myBabyMaker ()
     , el_id_sieie_                                                       ( -999.  )
     , el_id_detain_                                                      ( -999.  )
     , el_id_dphiin_                                                      ( -999.  )
+    , el_id_ooemoop_                                                     ( -999.  )
     , el_id_smurfV5_                                                     ( false  )
     , el_id_vbtf80_                                                      ( false  )
     , el_id_vbtf90_                                                      ( false  )
@@ -2085,6 +2095,7 @@ myBabyMaker::myBabyMaker ()
     , emfpfcL1Fj1_                                                       ( -999.  )
     , ptpfcL1Fj1_                                                        ( 0.     )
     , dphipfcL1Fj1_                                                      ( -999.  )
+    , csvpfcL1Fj1_                                                       ( -999.  )
     , ptpfcL1Fj1_b2b_                                                    ( -999.  )
     , dphipfcL1Fj1_b2b_                                                  ( -999.  )
     , npfcL1Fj1_                                                         ( 0      )
@@ -2100,6 +2111,7 @@ myBabyMaker::myBabyMaker ()
     , emfpfcL1Fj1res_                                                    ( -999.  )
     , ptpfcL1Fj1res_                                                     ( 0.     )
     , dphipfcL1Fj1res_                                                   ( -999.  )
+    , csvpfcL1Fj1res_                                                    ( -999.  )
     , ptpfcL1Fj1res_b2b_                                                 ( -999.  )
     , dphipfcL1Fj1res_b2b_                                               ( -999.  )
     , npfcL1Fj1res_                                                      ( 0      )
@@ -2476,6 +2488,85 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                             // if we get here, then count it
                             nvetomus_++;
                         }
+                       // store number of "loose" muons in event (for Fake Rate Synchronization)
+                        nloosemus_ = 0;
+                        for (unsigned int imu = 0; imu < cms2.mus_p4().size(); imu++)
+                        {
+
+                            if (cms2.mus_p4().at(imu).pt() < 10.0f)
+                                continue;
+
+                            if (fabs(cms2.mus_p4().at(imu).eta()) > 2.4f)
+                                continue;
+
+			    bool is_global    = ((cms2.mus_type().at(imu) & (1<<1)) != 0);
+			    bool is_pfmu      = mus_pid_PFMuon().at(imu);
+			    bool passChi2     = (mus_gfit_chi2().at(imu) / mus_gfit_ndof().at(imu) < 10);
+			    bool passMuHits   = (mus_gfit_validSTAHits().at(imu) > 0);
+			    bool passStations = (mus_numberOfMatchedStations().at(imu) > 1);
+			    bool passLayers   = (mus_trkidx().at(imu) >=0 ) ? (trks_nlayers().at(mus_trkidx().at(imu)) > 5) : false;
+			    bool passPixel    = (mus_trkidx().at(imu) >=0 ) ? (trks_valid_pixelhits().at(mus_trkidx().at(imu)) > 0) : false;
+			    int mutkid = cms2.mus_trkidx().at(imu);
+			    int ivtx   = firstGoodVertex();
+			    bool passD0_l     =  (ivtx >= 0 && mutkid >= 0) ? (fabs(trks_d0_pv(mutkid,ivtx).first) < 0.2): false;
+			    bool passDZ       =  (ivtx >= 0 && mutkid >= 0) ? (fabs(trks_dz_pv(mutkid,ivtx).first) < 0.2): false;
+			    bool passIso_l    = (muonIsoValuePF2012_deltaBeta(imu) < 1.);
+			    bool passes_id    = is_global && is_pfmu && passChi2 && passMuHits && passStations && passLayers && passPixel && passDZ;
+			    bool is_loose     = passes_id && passD0_l && passIso_l;
+
+			    if (not is_loose)
+                                continue;
+
+                            // if we get here, then count it
+                            nloosemus_++;
+                        }
+
+			nlooseels_ = 0;
+                        for (unsigned int iel = 0; iel < cms2.els_p4().size(); iel++)
+                        {
+                            if (iel == iLep) // skip the current muon
+                                continue;
+
+                            if (cms2.els_p4().at(iel).pt() < 10.0f)
+                                continue;
+
+                            if (fabs(cms2.els_p4().at(iel).eta()) > 2.5f)
+                                continue;
+
+			    bool isEB = fabs(els_etaSC().at(iel))<1.479;
+			    bool passSieie = isEB ? (els_sigmaIEtaIEta().at(iel) < 0.01) :  (els_sigmaIEtaIEta().at(iel) < 0.03);
+			    bool passDetain = isEB ? (fabs(els_dEtaIn().at(iel)) < 0.004) : (fabs(els_dEtaIn().at(iel)) < 0.007);
+			    bool passDphiin = isEB ? (fabs(els_dPhiIn().at(iel)) < 0.06) : (fabs(els_dPhiIn().at(iel)) < 0.03);
+			    bool passHovere = isEB ? (els_hOverE().at(iel) < 0.12) : (els_hOverE().at(iel) < 0.10);
+			    float ooemoop = fabs( (1.0/cms2.els_ecalEnergy().at(iel)) - (cms2.els_eOverPIn().at(iel)/cms2.els_ecalEnergy().at(iel)) );
+			    bool passOoemoop = isEB ? (fabs(ooemoop) < 0.05) : (fabs(ooemoop) < 0.05);
+			    bool passMHits = (els_exp_innerlayers().at(iel) < 2);
+			    bool passMITconv = !isFromConversionMIT(iel);
+                            int elgsftkid = cms2.els_gsftrkidx().at(iel);
+                            int eltkid    = cms2.els_trkidx().at(iel);
+                            int ivtx      = firstGoodVertex();
+			    float z0 = ivtx >= 0  ? ( elgsftkid>=0 ? gsftrks_dz_pv(elgsftkid,ivtx).first  : ( elgsftkid>=0 ? trks_dz_pv(eltkid,ivtx).first : cms2.els_z0().at(iel))) : -999.;
+			    bool passCharge = false;
+			    if( eltkid >= 0 ){
+			      int qCTF = trks_charge().at( eltkid );
+			      int qGSF = els_trk_charge().at(iel);
+			      int qPIX = els_sccharge().at(iel);
+			      if( qCTF == qGSF && qCTF == qPIX && qGSF == qPIX ) passCharge = true;
+			    }
+			    bool passD0_l = true;
+			    bool passDZ =  (fabs(z0) < 0.1);
+			    float eff_area = fastJetEffArea03_v2(els_etaSC().at(iel)); 
+			    float iso = (els_iso03_pf2012ext_ch().at(iel) + max(0.0f, els_iso03_pf2012ext_nh().at(iel) + els_iso03_pf2012ext_em().at(iel) - (max(0.0f, evt_ww_rho())*eff_area)))/els_p4().at(iel).pt();
+			    bool passIso_l = (iso < 0.6);
+			    bool passes_id = passSieie && passDetain && passDphiin && passHovere && passOoemoop && passMHits && passMITconv && passDZ && passCharge;
+			    bool is_loose = passes_id && passD0_l && passIso_l;
+
+			    if (not is_loose)
+                                continue;
+
+                            // if we get here, then count it
+                            nlooseels_++;
+                        }
 
                         //////////
                         // 2012 //
@@ -2686,7 +2777,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         const int elgsftkid = cms2.els_gsftrkidx().at(iLep);
                         const int eltkid    = cms2.els_trkidx().at(iLep);
                         const int ivtx      = firstGoodVertex();
-                        if (ivtx >= 0 && eltkid >= 0) 
+                        if (ivtx >= 0 && (eltkid >= 0 || elgsftkid>=0)) 
                         {
                             d0_        = elgsftkid>=0 ? gsftrks_d0_pv(elgsftkid,ivtx).first  : trks_d0_pv(eltkid,ivtx).first;
                             d0err_     = elgsftkid>=0 ? gsftrks_d0_pv(elgsftkid,ivtx).second : trks_d0_pv(eltkid,ivtx).second;
@@ -2700,6 +2791,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                             dz_        = cms2.els_z0().at(iLep);
                             dzerr_     = cms2.els_z0Err().at(iLep);
                         }
+
                         ip3d_      = els_ip3d().at(iLep);;
                         ip3derr_   = els_ip3derr().at(iLep);;
 
@@ -2731,8 +2823,10 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         pfiso04_ = (ch_pfiso04_ + em_pfiso04_ + nh_pfiso04_)/els_p4().at(iLep).pt(); 
 
                         // correct isolaion (using fastjet effective area)
-                        cpfiso03_rho_ = electronIsoValuePF2012_FastJetEffArea_v3(iLep, /*conesize=*/0.3, /*vtx=*/-999, /*52X iso=*/false);
-                        cpfiso04_rho_ = electronIsoValuePF2012_FastJetEffArea_v3(iLep, /*conesize=*/0.4, /*vtx=*/-999, /*52X iso=*/false);
+                        cpfiso03_rho_ = electronIsoValuePF2012_FastJetEffArea_v3(iLep, /*conesize=*/0.3, /*vtx=*/-999, /*52X iso=*/false);			
+			cpfiso04_rho_ = electronIsoValuePF2012_FastJetEffArea_v3(iLep, /*conesize=*/0.4, /*vtx=*/-999, /*52X iso=*/false);
+
+
 
                         // mc information
                         if (!isData) {
@@ -2753,6 +2847,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         el_id_sieie_   = cms2.els_sigmaIEtaIEta().at(iLep);
                         el_id_detain_  = cms2.els_dEtaIn().at(iLep);
                         el_id_dphiin_  = cms2.els_dPhiIn().at(iLep);
+			el_id_ooemoop_ = fabs( (1.0/cms2.els_ecalEnergy().at(iLep)) - (cms2.els_eOverPIn().at(iLep)/cms2.els_ecalEnergy().at(iLep)) );
                         el_id_smurfV5_ = pass_electronSelection( iLep, electronSelection_smurfV5_id );
                         el_id_vbtf80_  = electronId_VBTF(iLep, VBTF_35X_80, false, false);
                         el_id_vbtf90_  = electronId_VBTF(iLep, VBTF_35X_90, false, false);
@@ -2982,7 +3077,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                             LorentzVector jp4 = pfjets_p4().at(iJet);
                             float jet_cor = jetCorrection(jp4, jet_pf_L2L3corrector);
                             //float jet_cor = pfjets_corL2L3().at(iJet);
-                            LorentzVector jp4cor = jp4 * jet_cor;
+                            LorentzVector jp4cor = jp4 * jet_cor; 
                             if (jp4cor.pt() > 15 && pfjets_combinedSecondaryVertexBJetTag().at(iJet) > 0.679) btagpfc_ = true;
                             double dr = ROOT::Math::VectorUtil::DeltaR( els_p4().at(iLep), jp4cor );
                             if( dr > deltaRCut && jp4cor.pt() > 10 ) npfcj1_++;
@@ -3003,6 +3098,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         emfpfcL1Fj1_      = -999.0;
                         ptpfcL1Fj1_       = -999.0;
                         dphipfcL1Fj1_     = -999.0;
+			csvpfcL1Fj1_      = -999.0;
                         ptpfcL1Fj1_b2b_   = -999.0;
                         dphipfcL1Fj1_b2b_ = -999.0;
                         npfcL1Fj1_        = 0;
@@ -3012,7 +3108,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         npfc50L1Fj1_eth_  = 0;
                         npfc65L1Fj1_eth_  = 0;
                         btagpfcL1F_       = false;
-                        rho_ = cms2.evt_rho();
+                        rho_ = cms2.evt_ww_rho();
                         for (unsigned int iJet = 0; iJet < pfjets_p4().size(); iJet++) {
                             if ( !passesPFJetID(iJet)) continue;
                             LorentzVector jp4 = pfjets_p4().at(iJet);
@@ -3031,12 +3127,12 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                             if( dr > deltaRCut && jp4cor.pt() > 40 && pfjets_combinedSecondaryVertexBJetTag().at(iJet) > 0.679) nbpfc40L1Fj1_++;
                             if (dr > 0.4       && jp4cor.pt() > 50 ) npfc50L1Fj1_eth_++;
                             if (dr > 0.4       && jp4cor.pt() > 65 ) npfc65L1Fj1_eth_++;
-                            if ( dr > deltaRCut && jp4cor.pt() > ptpfcL1Fj1_ ){
+                            if ( dr > deltaRCut && jp4cor.pt() > ptpfcL1Fj1_ && fabs(pfjets_p4().at(iJet).eta()) < 2.5){
                                 emfpfcL1Fj1_ = (cms2.pfjets_chargedEmE().at(iJet) + cms2.pfjets_neutralEmE().at(iJet)) / pfjets_p4().at(iJet).E();
                                 ptpfcL1Fj1_ = jp4cor.pt();
                                 float dphi = fabs( ROOT::Math::VectorUtil::DeltaPhi( els_p4().at(iLep), jp4cor ) );
                                 dphipfcL1Fj1_ = dphi;
-
+				csvpfcL1Fj1_ = pfjets_combinedSecondaryVertexBJetTag().at(iJet);
                                 // back to back in phi
                                 if( dphi > deltaPhiCut && jp4cor.pt() > ptpfcL1Fj1_b2b_ ){
                                     ptpfcL1Fj1_b2b_   = jp4cor.pt();
@@ -3050,6 +3146,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         emfpfcL1Fj1res_      = -999.0;
                         ptpfcL1Fj1res_       = -999.0;
                         dphipfcL1Fj1res_      = -999.0;
+                        csvpfcL1Fj1res_      = -999.0;
                         ptpfcL1Fj1res_b2b_   = -999.0;
                         dphipfcL1Fj1res_b2b_ = -999.0;
                         npfcL1Fj1res_        = 0;
@@ -3059,7 +3156,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         npfc50L1Fj1res_eth_  = 0;
                         npfc65L1Fj1res_eth_  = 0;
                         btagpfcL1Fres_       = false;
-                        rho_ = cms2.evt_rho();
+                        rho_ = cms2.evt_ww_rho();
                         for (unsigned int iJet = 0; iJet < pfjets_p4().size(); iJet++) {
                             if ( !passesPFJetID(iJet)) continue;
                             LorentzVector jp4 = pfjets_p4().at(iJet);
@@ -3078,12 +3175,12 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                             if( dr > deltaRCut && jp4cor.pt() > 40 && pfjets_combinedSecondaryVertexBJetTag().at(iJet) > 0.679) nbpfc40L1Fj1res_++;
                             if (dr > 0.4       && jp4cor.pt() > 50 ) npfc50L1Fj1res_eth_++;
                             if (dr > 0.4       && jp4cor.pt() > 65 ) npfc65L1Fj1res_eth_++;
-                            if ( dr > deltaRCut && jp4cor.pt() > ptpfcL1Fj1res_ ){
+                            if ( dr > deltaRCut && jp4cor.pt() > ptpfcL1Fj1res_  && fabs(pfjets_p4().at(iJet).eta()) < 2.5){
                                 emfpfcL1Fj1res_ = (cms2.pfjets_chargedEmE().at(iJet) + cms2.pfjets_neutralEmE().at(iJet)) / pfjets_p4().at(iJet).E();
                                 ptpfcL1Fj1res_ = jp4cor.pt();
                                 float dphi = fabs( ROOT::Math::VectorUtil::DeltaPhi( els_p4().at(iLep), jp4cor ) );
                                 dphipfcL1Fj1res_ = dphi;
-
+				csvpfcL1Fj1res_ = pfjets_combinedSecondaryVertexBJetTag().at(iJet);
                                 // back to back in phi
                                 if( dphi > deltaPhiCut && jp4cor.pt() > ptpfcL1Fj1res_b2b_ ){
                                     ptpfcL1Fj1res_b2b_   = jp4cor.pt();
@@ -3359,7 +3456,50 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                             nloosemus_++;
                         }
 
+			nlooseels_ = 0;
+                        for (unsigned int iel = 0; iel < cms2.els_p4().size(); iel++)
+                        {
 
+                            if (cms2.els_p4().at(iel).pt() < 10.0f)
+                                continue;
+
+                            if (fabs(cms2.els_p4().at(iel).eta()) > 2.5f)
+                                continue;
+
+			    bool isEB = fabs(els_etaSC().at(iel))<1.479;
+			    bool passSieie = isEB ? (els_sigmaIEtaIEta().at(iel) < 0.01) :  (els_sigmaIEtaIEta().at(iel) < 0.03);
+			    bool passDetain = isEB ? (fabs(els_dEtaIn().at(iel)) < 0.004) : (fabs(els_dEtaIn().at(iel)) < 0.007);
+			    bool passDphiin = isEB ? (fabs(els_dPhiIn().at(iel)) < 0.06) : (fabs(els_dPhiIn().at(iel)) < 0.03);
+			    bool passHovere = isEB ? (els_hOverE().at(iel) < 0.12) : (els_hOverE().at(iel) < 0.10);
+			    float ooemoop = fabs( (1.0/cms2.els_ecalEnergy().at(iel)) - (cms2.els_eOverPIn().at(iel)/cms2.els_ecalEnergy().at(iel)) );
+			    bool passOoemoop = isEB ? (fabs(ooemoop) < 0.05) : (fabs(ooemoop) < 0.05);
+			    bool passMHits = (els_exp_innerlayers().at(iel) < 2);
+			    bool passMITconv = !isFromConversionMIT(iel);
+                            int elgsftkid = cms2.els_gsftrkidx().at(iel);
+                            int eltkid    = cms2.els_trkidx().at(iel);
+                            int ivtx      = firstGoodVertex();
+			    float z0 = ivtx >= 0  ? ( elgsftkid>=0 ? gsftrks_dz_pv(elgsftkid,ivtx).first  : ( elgsftkid>=0 ? trks_dz_pv(eltkid,ivtx).first : cms2.els_z0().at(iel))) : -999.;
+			    bool passD0_l = true;
+			    bool passDZ =  (fabs(z0) < 0.1);
+			    bool passCharge = false;
+                            if( eltkid >= 0 ){
+                              int qCTF = trks_charge().at( eltkid );
+                              int qGSF = els_trk_charge().at(iel);
+                              int qPIX = els_sccharge().at(iel);
+                              if( qCTF == qGSF && qCTF == qPIX && qGSF == qPIX ) passCharge = true;
+                            }
+			    float eff_area = fastJetEffArea03_v2(els_etaSC().at(iel)); 
+			    float iso = (els_iso03_pf2012ext_ch().at(iel) + max(0.0f, els_iso03_pf2012ext_nh().at(iel) + els_iso03_pf2012ext_em().at(iel) - (max(0.0f, evt_ww_rho())*eff_area)))/els_p4().at(iel).pt();
+			    bool passIso_l = (iso < 0.6);
+			    bool passes_id = passSieie && passDetain && passDphiin && passHovere && passOoemoop && passMHits && passMITconv && passDZ && passCharge;
+			    bool is_loose = passes_id && passD0_l && passIso_l;
+
+			    if (not is_loose)
+                                continue;
+
+                            // if we get here, then count it
+                            nlooseels_++;
+                        }
 			
 
                         ////////////////////////////////////////////////////////////////////////
@@ -3878,6 +4018,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         emfpfcL1Fj1_      = -999.0;
                         ptpfcL1Fj1_       = -999.0;
                         dphipfcL1Fj1_     = -999.0;
+                        csvpfcL1Fj1_     = -999.0;
                         ptpfcL1Fj1_b2b_   = -999.0;
                         dphipfcL1Fj1_b2b_ = -999.0;
                         npfcL1Fj1_        = 0;
@@ -3887,7 +4028,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         npfc50L1Fj1_eth_  = 0;
                         npfc65L1Fj1_eth_  = 0;
                         btagpfcL1F_       = false;
-                        rho_ = cms2.evt_rho();
+                        rho_ = cms2.evt_ww_rho();
                         for (unsigned int iJet = 0; iJet < pfjets_p4().size(); iJet++) {
                             // JetID
                             if ( !passesPFJetID(iJet)) continue;
@@ -3912,7 +4053,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                                 ptpfcL1Fj1_ = jp4cor.pt();
                                 float dphi = fabs( ROOT::Math::VectorUtil::DeltaPhi( mus_p4().at(iLep), jp4cor ) );
                                 dphipfcL1Fj1_ = dphi;
-				if (!isData) csvpfj1_ = pfjets_combinedSecondaryVertexBJetTag().at(iJet);
+				csvpfcL1Fj1_ = pfjets_combinedSecondaryVertexBJetTag().at(iJet);
                                 // back to back in phi
                                 if( dphi > deltaPhiCut && jp4cor.pt() > ptpfcL1Fj1_b2b_ ){
                                     ptpfcL1Fj1_b2b_   = jp4cor.pt();
@@ -3926,6 +4067,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         emfpfcL1Fj1res_      = -999.0;
                         ptpfcL1Fj1res_       = -999.0;
                         dphipfcL1Fj1res_      = -999.0;
+                        csvpfcL1Fj1res_       = -999.0;
                         ptpfcL1Fj1res_b2b_   = -999.0;
                         dphipfcL1Fj1res_b2b_ = -999.0;
                         npfcL1Fj1res_        = 0;
@@ -3935,7 +4077,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                         npfc50L1Fj1res_eth_  = 0;
                         npfc65L1Fj1res_eth_  = 0;
                         btagpfcL1Fres_       = false;
-                        rho_ = cms2.evt_rho();
+                        rho_ = cms2.evt_ww_rho();
                         for (unsigned int iJet = 0; iJet < pfjets_p4().size(); iJet++) {
                             // JetID
                             if ( !passesPFJetID(iJet)) continue;
@@ -3960,7 +4102,7 @@ void myBabyMaker::ScanChain(TChain* chain, const char *babyFilename, int eormu, 
                                 ptpfcL1Fj1res_ = jp4cor.pt();
                                 float dphi = fabs( ROOT::Math::VectorUtil::DeltaPhi( mus_p4().at(iLep), jp4cor ) );
                                 dphipfcL1Fj1res_ = dphi;
-				if (isData) csvpfj1_ = pfjets_combinedSecondaryVertexBJetTag().at(iJet);
+				csvpfcL1Fj1res_ = pfjets_combinedSecondaryVertexBJetTag().at(iJet);
                                 // back to back in phi
                                 if( dphi > deltaPhiCut && jp4cor.pt() > ptpfcL1Fj1res_b2b_ ){
                                     ptpfcL1Fj1res_b2b_   = jp4cor.pt();

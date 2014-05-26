@@ -68,6 +68,7 @@ private:
     Int_t nvetoels_;
     Int_t nvetomus_;
     Int_t nloosemus_;
+    Int_t nlooseels_;
 
     /////////////////////////// 
     // End Event Information //
@@ -165,6 +166,7 @@ private:
     Float_t el_id_sieie_;
     Float_t el_id_detain_;
     Float_t el_id_dphiin_;
+    Float_t el_id_ooemoop_;
     Bool_t  el_id_smurfV5_;
     Bool_t  el_id_vbtf80_;
     Bool_t  el_id_vbtf90_;
@@ -603,6 +605,7 @@ private:
     Float_t emfpfcL1Fj1_;      // EMF of hight pt PF jet well separated from lepton
     Float_t ptpfcL1Fj1_;       // highest pt jet well separated from the lepton
     Float_t dphipfcL1Fj1_;     // dphi between highest pt jet well separated from the lepton and lepton
+    Float_t csvpfcL1Fj1_;      // CSV of highest pt jet well separated from the lepton
     Float_t ptpfcL1Fj1_b2b_;   // highest pt jet away frmo lepton by dR >= 1.0 and dPhi > 2.5
     Float_t dphipfcL1Fj1_b2b_; // dphi between lepton and jet for jets away from lepton by dR >= 1.0
     Int_t   npfcL1Fj1_;        // number of jets above 10 GeV and away from lepton by dR >= 1.0
@@ -621,6 +624,7 @@ private:
     Float_t emfpfcL1Fj1res_;      // EMF of hight pt PF jet well separated from lepton
     Float_t ptpfcL1Fj1res_;       // highest pt jet well separated from the lepton
     Float_t dphipfcL1Fj1res_;     // dphi between highest pt jet well separated from the lepton and lepton
+    Float_t csvpfcL1Fj1res_;      // CSV of highest pt jet well separated from the lepton
     Float_t ptpfcL1Fj1res_b2b_;   // highest pt jet away frmo lepton by dR >= 1.0 and dPhi > 2.5
     Float_t dphipfcL1Fj1res_b2b_; // dphi between lepton and jet for jets away from lepton by dR >= 1.0
     Int_t   npfcL1Fj1res_;        // number of jets above 10 GeV and away from lepton by dR >= 1.0
